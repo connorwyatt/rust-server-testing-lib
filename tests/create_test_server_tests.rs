@@ -21,9 +21,9 @@ async fn create_test_server_should_respond_to_requests() {
 }
 
 fn app() -> Router {
-    Router::new().route("/test", get(handle))
+    Router::new().route("/test", get(handler))
 }
 
-async fn handle() -> axum::http::StatusCode {
+async fn handler() -> axum::http::StatusCode {
     axum::http::StatusCode::OK
 }
