@@ -10,7 +10,7 @@ async fn create_test_server_should_respond_to_requests() {
 
     let client = Client::new();
 
-    let uri = Uri::from_str(format!("http://localhost:{}", socket_addr.port()).as_str())
+    let uri = Uri::from_str(format!("http://localhost:{}/test", socket_addr.port()).as_str())
         .expect("uri should be parseable");
 
     let result = client.get(uri).await;
