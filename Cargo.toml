@@ -1,0 +1,12 @@
+[package]
+name = "server-testing"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.6.20"
+tokio = "1.33.0"
+
+[dev-dependencies]
+hyper = { version = "0.14.27", features = ["client"] }
+tokio = { version = "1.33.0", features = ["macros"] }
