@@ -13,11 +13,9 @@ async fn create_test_server_should_respond_to_requests() {
     let uri = Uri::from_str(format!("http://localhost:{}/test", socket_addr.port()).as_str())
         .expect("uri should be parseable");
 
-    let result = client.get(uri).await;
+    let response = client.get(uri).await.expect("request should succeed");
 
-    assert!(result.is_ok());
-
-    assert_eq!(result.unwrap().status(), hyper::http::StatusCode::OK);
+    assert_eq!(response.status(), hyper::http::StatusCode::OK);
 }
 
 fn app() -> Router {
